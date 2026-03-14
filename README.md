@@ -1,5 +1,21 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+## App Icon Source
+
+The icon source of truth is [assets/icons/app-icon.svg](/c:/Users/User/Desktop/My Projects/Helper/assets/icons/app-icon.svg).
+
+Android launcher icons cannot use a raw `.svg` file directly from `res/`, so the project keeps:
+
+- one editable master SVG in `assets/icons/app-icon.svg`
+- one generated Android foreground icon in `android/app/src/main/res/drawable-nodpi/ic_launcher_foreground.png`
+- adaptive icon XML files in `android/app/src/main/res/mipmap-anydpi-v26`
+
+When you change the icon, run:
+
+```sh
+npm run icon:android
+```
+
 # Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
