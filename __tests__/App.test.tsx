@@ -8,6 +8,8 @@ import App from '../App';
 
 jest.mock('react-native-fs', () => ({
   DocumentDirectoryPath: '/tmp',
+  exists: jest.fn(() => Promise.resolve(false)),
+  readFile: jest.fn(() => Promise.resolve('')),
   scanFile: jest.fn(() => Promise.resolve()),
   writeFile: jest.fn(() => Promise.resolve()),
 }));
