@@ -13,7 +13,6 @@ export type Entry = {
 
 export type MonthBucket = {
   id: string;
-  startingBalance: string;
   entries: Entry[];
 };
 
@@ -58,14 +57,12 @@ export type ThemePalette = {
 export type Copy = {
   locale: string;
   appName: string;
-  screens: Record<Screen, {title: string; subtitle: string}>;
+  screens: Record<Screen, {title: string}>;
   menuLabel: string;
   language: string;
   theme: string;
   months: string;
   nextMonth: string;
-  startingBalance: string;
-  startingBalancePlaceholder: string;
   currentBalance: string;
   expenses: string;
   income: string;
@@ -82,7 +79,6 @@ export type Copy = {
   history: string;
   historyEmpty: string;
   delete: string;
-  calculator: string;
   calculate: string;
   calcError: string;
   qrCode: string;
@@ -99,7 +95,6 @@ export type Copy = {
   qrSaveErrorMessage: string;
   barcodeSaved: string;
   barcodeSaveErrorMessage: string;
-  hero: Record<Screen, {label: string; title: string; text: string}>;
   incomeEntry: string;
   expenseEntry: string;
 };
@@ -116,17 +111,15 @@ export const copy: Record<Language, Copy> = {
     locale: 'ru-RU',
     appName: 'Helper',
     screens: {
-      finance: {title: 'Финансы', subtitle: 'Доходы, расходы и месяцы'},
-      calculator: {title: 'Калькулятор', subtitle: 'Быстрые расчеты отдельно от учета'},
-      codes: {title: 'QR и штрихкоды', subtitle: 'Генерация и сохранение кодов'},
+      finance: {title: 'Финансы'},
+      calculator: {title: 'Калькулятор'},
+      codes: {title: 'QR и штрихкоды'},
     },
     menuLabel: 'Разделы',
     language: 'Язык',
     theme: 'Тема',
     months: 'Месяцы',
     nextMonth: 'Следующий месяц',
-    startingBalance: 'Стартовый баланс месяца',
-    startingBalancePlaceholder: 'Например, 100000',
     currentBalance: 'Текущий баланс',
     expenses: 'Расходы',
     income: 'Доходы',
@@ -143,7 +136,6 @@ export const copy: Record<Language, Copy> = {
     history: 'История',
     historyEmpty: 'Записей пока нет.',
     delete: 'Удалить',
-    calculator: 'Калькулятор',
     calculate: 'Посчитать',
     calcError: 'Ошибка',
     qrCode: 'QR-код',
@@ -160,23 +152,6 @@ export const copy: Record<Language, Copy> = {
     qrSaveErrorMessage: 'Не удалось сохранить QR-код.',
     barcodeSaved: 'Штрихкод сохранен',
     barcodeSaveErrorMessage: 'Не удалось сохранить штрихкод.',
-    hero: {
-      finance: {
-        label: 'ФИНАНСОВЫЙ ЖУРНАЛ',
-        title: 'Личный учет по месяцам без перегруза и лишних экранов.',
-        text: 'Фиксируй расходы и доходы, контролируй остаток и открывай следующий месяц одним касанием.',
-      },
-      calculator: {
-        label: 'КАЛЬКУЛЯТОР',
-        title: 'Отдельная зона для черновых расчетов.',
-        text: 'Считай быстро и не смешивай промежуточные вычисления с финансовыми записями.',
-      },
-      codes: {
-        label: 'QR И ШТРИХКОДЫ',
-        title: 'Генератор кодов в том же приложении, без лишних переходов.',
-        text: 'Введи текст или ссылку, сгенерируй QR или Code39 и сразу сохрани файл на устройство.',
-      },
-    },
     incomeEntry: 'доход',
     expenseEntry: 'расход',
   },
@@ -184,17 +159,15 @@ export const copy: Record<Language, Copy> = {
     locale: 'en-US',
     appName: 'Helper',
     screens: {
-      finance: {title: 'Finance', subtitle: 'Income, expenses, and monthly tracking'},
-      calculator: {title: 'Calculator', subtitle: 'Quick calculations outside your ledger'},
-      codes: {title: 'QR & barcodes', subtitle: 'Create and save codes'},
+      finance: {title: 'Finance'},
+      calculator: {title: 'Calculator'},
+      codes: {title: 'QR & barcodes'},
     },
     menuLabel: 'Sections',
     language: 'Language',
     theme: 'Theme',
     months: 'Months',
     nextMonth: 'Next month',
-    startingBalance: 'Starting balance',
-    startingBalancePlaceholder: 'For example, 100000',
     currentBalance: 'Current balance',
     expenses: 'Expenses',
     income: 'Income',
@@ -211,7 +184,6 @@ export const copy: Record<Language, Copy> = {
     history: 'History',
     historyEmpty: 'No entries yet.',
     delete: 'Delete',
-    calculator: 'Calculator',
     calculate: 'Calculate',
     calcError: 'Error',
     qrCode: 'QR code',
@@ -228,23 +200,6 @@ export const copy: Record<Language, Copy> = {
     qrSaveErrorMessage: 'Could not save the QR code.',
     barcodeSaved: 'Barcode saved',
     barcodeSaveErrorMessage: 'Could not save the barcode.',
-    hero: {
-      finance: {
-        label: 'MONEY LOG',
-        title: 'Monthly budgeting without clutter or throwaway screens.',
-        text: 'Track expenses and income, keep your balance visible, and roll into the next month in one tap.',
-      },
-      calculator: {
-        label: 'CALCULATOR',
-        title: 'A separate workspace for quick math.',
-        text: 'Use it for rough calculations without mixing temporary values into your finance records.',
-      },
-      codes: {
-        label: 'QR & BARCODES',
-        title: 'Code generation built into the app, no extra flow needed.',
-        text: 'Enter text or a link, generate a QR or Code39 barcode, and save the file directly to your device.',
-      },
-    },
     incomeEntry: 'income',
     expenseEntry: 'expense',
   },
@@ -252,17 +207,15 @@ export const copy: Record<Language, Copy> = {
     locale: 'uz-UZ',
     appName: 'Helper',
     screens: {
-      finance: {title: 'Moliya', subtitle: 'Daromad, xarajat va oylar kesimi'},
-      calculator: {title: 'Kalkulyator', subtitle: "Hisob-kitoblar alohida oynada"},
-      codes: {title: 'QR va shtrixkod', subtitle: 'Kod yaratish va saqlash'},
+      finance: {title: 'Moliya'},
+      calculator: {title: 'Kalkulyator'},
+      codes: {title: 'QR va shtrixkod'},
     },
     menuLabel: "Bo'limlar",
     language: 'Til',
     theme: 'Mavzu',
     months: 'Oylar',
     nextMonth: 'Keyingi oy',
-    startingBalance: "Oyning boshlang'ich balansi",
-    startingBalancePlaceholder: 'Masalan, 100000',
     currentBalance: 'Joriy balans',
     expenses: 'Xarajatlar',
     income: 'Daromadlar',
@@ -279,7 +232,6 @@ export const copy: Record<Language, Copy> = {
     history: 'Tarix',
     historyEmpty: "Hali yozuvlar yo'q.",
     delete: "O'chirish",
-    calculator: 'Kalkulyator',
     calculate: 'Hisoblash',
     calcError: 'Xato',
     qrCode: 'QR-kod',
@@ -296,23 +248,6 @@ export const copy: Record<Language, Copy> = {
     qrSaveErrorMessage: 'QR-kodni saqlab bo‘lmadi.',
     barcodeSaved: 'Shtrixkod saqlandi',
     barcodeSaveErrorMessage: 'Shtrixkodni saqlab bo‘lmadi.',
-    hero: {
-      finance: {
-        label: 'MOLIYA JURNALI',
-        title: "Oyma-oy hisobni ortiqcha bezaksiz yuritish uchun qulay panel.",
-        text: "Xarajat va daromadlarni yozib boring, qoldiqni kuzating va keyingi oyga bir tegishda o'ting.",
-      },
-      calculator: {
-        label: 'KALKULYATOR',
-        title: 'Tez hisob-kitoblar uchun alohida maydon.',
-        text: 'Oraliq hisoblarni moliyaviy yozuvlar bilan aralashtirmasdan ishlatish mumkin.',
-      },
-      codes: {
-        label: 'QR VA SHTRIXKOD',
-        title: "Kod yaratish shu ilovaning o'zida, ortiqcha o'tishlarsiz.",
-        text: 'Matn yoki havolani kiriting, QR yoki Code39 yarating va faylni qurilmaga darhol saqlang.',
-      },
-    },
     incomeEntry: 'daromad',
     expenseEntry: 'xarajat',
   },
@@ -392,7 +327,6 @@ export const today = new Date().toISOString().slice(0, 10);
 export const initialMonths: MonthBucket[] = [
   {
     id: toMonthId(new Date()),
-    startingBalance: '100000',
     entries: [
       {id: '1', title: 'Coffee', amount: 12000, type: 'expense', date: today},
       {id: '2', title: 'Lunch', amount: 45000, type: 'expense', date: today},

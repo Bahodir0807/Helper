@@ -195,7 +195,7 @@ export function useAppState() {
     if (!months.some(month => month.id === nextMonthId)) {
       setMonths(current => [
         ...current,
-        {id: nextMonthId, startingBalance: '0', entries: []},
+        {id: nextMonthId, entries: []},
       ]);
     }
     setActiveMonthId(nextMonthId);

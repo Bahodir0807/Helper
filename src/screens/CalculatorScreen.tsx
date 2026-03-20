@@ -29,7 +29,6 @@ export function CalculatorScreen({
 }: CalculatorScreenProps) {
   return (
     <View style={styles.card}>
-      <Text style={styles.sectionTitle}>{t.calculator}</Text>
       <View style={styles.calculatorDisplay}>
         <Text style={styles.expressionText}>{expression}</Text>
         <Text style={styles.resultText}>{calcResult}</Text>

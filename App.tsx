@@ -2,7 +2,6 @@ import React from 'react';
 import {ScrollView, StatusBar, View} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {formatMonthTitle} from './src/utils/appHelpers';
-import {HeroBlock} from './src/components/HeroBlock';
 import {SidebarMenu} from './src/components/SidebarMenu';
 import {TopBar} from './src/components/TopBar';
 import {createStyles} from './src/appStyles';
@@ -49,13 +48,6 @@ function AppContent() {
           <ScrollView
             contentContainerStyle={styles.content}
             keyboardShouldPersistTaps="handled">
-            <HeroBlock
-              styles={styles}
-              screen={state.screen}
-              title={state.t.screens[state.screen].title}
-              activeMonthTitle={formatMonthTitle(state.activeMonth.id, state.t.locale)}
-            />
-
             {state.screen === 'finance' ? (
               <FinanceScreen
                 styles={styles}
